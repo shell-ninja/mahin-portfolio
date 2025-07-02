@@ -36,13 +36,19 @@ const observer = new IntersectionObserver((entries) => {
             }
         });
 
-        if (animatedEl && isMediumDevice) { // Only apply animation if it's a medium device and the element exists
-            if (entry.isIntersecting) {
-                animatedEl.classList.remove('animate__bounceOutRight');
-                animatedEl.classList.add('animate__bounceInLeft');
-            } else {
-                animatedEl.classList.remove('animate__bounceInLeft');
-                animatedEl.classList.add('animate__bounceOutRight');
+        if (animatedEl) { // Check if animated element exists
+            if (isMediumDevice) { // Apply animation only on medium devices
+                if (entry.isIntersecting) {
+                    animatedEl.classList.remove('animate__bounceOutRight');
+                    animatedEl.classList.add('animate__bounceInLeft');
+                } else {
+                    animatedEl.classList.remove('animate__bounceInLeft');
+                    animatedEl.classList.add('animate__bounceOutRight');
+                }
+            } else { // On mobile devices, ensure elements are visible and remove animation classes
+                animatedEl.classList.remove('animate__bounceInLeft', 'animate__bounceOutRight', 'animate__animated');
+                animatedEl.style.opacity = '1';
+                animatedEl.style.transform = 'none';
             }
         }
     });
