@@ -22,22 +22,28 @@ const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
 const observer = new IntersectionObserver((entries) => {
+    const isMediumDevice = window.matchMedia('(min-width: 768px)').matches;
+
     entries.forEach(entry => {
         const animatedEl = entry.target.querySelector('.animate__animated');
-        if (entry.isIntersecting) {
-            animatedEl.classList.remove('animate__bounceOutRight');
-            animatedEl.classList.add('animate__bounceInLeft');
-            
-            const id = entry.target.getAttribute('id');
-            navLinks.forEach(link => {
-                link.classList.remove('nav-active');
-                if (link.getAttribute('href') === `#${id}`) {
-                    link.classList.add('nav-active');
-                }
-            });
-        } else {
-            animatedEl.classList.remove('animate__bounceInLeft');
-            animatedEl.classList.add('animate__bounceOutRight');
+        
+        // Always update nav links regardless of device size or animation
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+            link.classList.remove('nav-active');
+            if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('nav-active');
+            }
+        });
+
+        if (animatedEl && isMediumDevice) { // Only apply animation if it's a medium device and the element exists
+            if (entry.isIntersecting) {
+                animatedEl.classList.remove('animate__bounceOutRight');
+                animatedEl.classList.add('animate__bounceInLeft');
+            } else {
+                animatedEl.classList.remove('animate__bounceInLeft');
+                animatedEl.classList.add('animate__bounceOutRight');
+            }
         }
     });
 }, { threshold: 0.5 });
