@@ -27,14 +27,16 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         const animatedEl = entry.target.querySelector('.animate__animated');
         
-        // Always update nav links regardless of device size or animation
         const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-            link.classList.remove('nav-active');
-            if (link.getAttribute('href') === `#${id}`) {
-                link.classList.add('nav-active');
+        if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+                link.classList.remove('nav-active');
+            });
+            const correspondingLink = document.querySelector(`.nav-link[href="#${id}"]`);
+            if (correspondingLink) {
+                correspondingLink.classList.add('nav-active');
             }
-        });
+        }
 
         if (animatedEl) { // Check if animated element exists
             if (isMediumDevice) { // Apply animation only on medium devices
@@ -52,7 +54,7 @@ const observer = new IntersectionObserver((entries) => {
             }
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.1 });
 
 sections.forEach(section => {
     observer.observe(section);
