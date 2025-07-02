@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahin's Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/particles.css">
+    <link rel="stylesheet" href="css/skills.css">
+</head>
+<body>
+    <div id="scroll-indicator" class="fixed top-0 left-0 bg-teal-400 z-50"></div>
+
+    <!-- Navbar -->
+    <nav class="p-4 fixed w-full top-0 z-10 navbar-blur animate__animated animate__bounceInDown animate__faster">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold "> Mahin </a>
+            <div class="hidden md:flex space-x-4">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About Me</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none relative w-6 h-6">
+                    <span class="hamburger-line top-line"></span>
+                    <span class="hamburger-line middle-line"></span>
+                    <span class="hamburger-line bottom-line"></span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden animate__animated animate__bounceInDown animate__faster">
+            <a href="#home" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">Home</a>
+            <a href="#about" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">About Me</a>
+            <a href="#skills" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">Skills</a>
+            <a href="#projects" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">Projects</a>
+            <a href="#contact" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="h-screen flex items-center justify-center text-center">
+            <div id="particles-js"></div>
+            <div class="bg-opacity-75 p-8 rounded-lg relative text-left">
+                <p class="text-xl  md:mb-4 animate__animated animate__bounceInUp">Hey, I'm
+                </p>
+                <h1 class="text-3xl mt-4 md:text-5xl font-bold mb-6 animate__animated animate__bounceInDown">MD. Mahin Islam Mahi</h1>
+                <p class="text-xl md:text-2xl  animate__animated animate__bounceInUp">I'm not a person, I'm a config file with anxiety. </br>
+                Linux Nerd by day, also Linux Nerd by night. </br>
+                My desktop looks better than my future (-_-)</p>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 full-height">
+            <div class="container mx-auto px-4 animate__animated">
+                <h2 class="text-4xl font-bold text-center mb-12 ">About Me</h2>
+                <div class="flex flex-col md:flex-row items-start md:gap-4">
+                    
+                    <div class="md:w-1/2">
+                        <p class="text-lg leading-relaxed">
+                            <b>First Journey</b>: The Web Dev Era (2021) </br>
+                            Once upon a time in 2021, I bravely entered the world of web development.
+                            Armed with HTML, CSS, JS, Tailwind, and a dream, I set out to build The Next Big Thing™.
+                            I even shook hands with React, flirted with Express.js, and had a long, complicated relationship with MongoDB. </br>
+
+                            But somewhere along the way...</br>
+
+                            <i>console.log("burnout");</i></br>
+
+                            Motivation left the chat. </br>
+                            So... I gave up. Like a true developer. 💀</br>
+
+                        </p>
+                        <p class="text-lg leading-relaxed mt-4">
+                            <b>Second Journey</b>: The Linux Awakening </br>
+                            After some time wandering the void, I stumbled upon Linux. </br>
+                            Yeah with Ubuntu. </br>
+                            But now? </br>
+                            Don't ask me that. It's Arch.😂 </br>
+
+                            I started writing shell scripts like spells,
+                            taming the arcane beasts known as bash, zsh, and the one true dragon: Hyprland.
+
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 mt-5">
+                        <img src="images/user.jpg" alt="My Picture" class="rounded-lg mx-auto shadow-lg w-2/3 h-auto object-cover">
+                    </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 full-height">
+            <div class="container mx-auto px-4 animate__animated">
+                <h2 class="text-4xl font-bold text-center mb-12 ">My Skills</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="skill-circle html" data-percent="90">
+                        <svg viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                            <path class="circle" stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                        </svg>
+                        <div class="skill-name"><i class="fa-brands fa-html5"></i> </br>
+                            HTML 5
+                        </div>
+                    </div>
+                    <div class="skill-circle css" data-percent="85">
+                        <svg viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                            <path class="circle" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                        </svg>
+                        <div class="skill-name"><i class="fa-brands fa-css3-alt"></i> </br> 
+                            CSS 3
+                        </div>
+                    </div>
+                    <div class="skill-circle js" data-percent="80">
+                        <svg viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                            <path class="circle" stroke-dasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                        </svg>
+                        <div class="skill-name"><i class="fa-brands fa-js"></i> </br>
+                            JS
+                        </div>
+                    </div>
+                    <div class="skill-circle react" data-percent="75">
+                        <svg viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                            <path class="circle" stroke-dasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                        </svg>
+                        <div class="skill-name"><i class="fa-brands fa-react"></i> </br>
+                            React
+                        </div>
+                    </div>
+                    <div class="skill-circle linux" data-percent="80">
+                        <svg viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                            <path class="circle" stroke-dasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                        </svg>
+                        <div class="skill-name"><i class="fab fa-linux"></i> </br>
+                            Linux
+                        </div>
+                    </div>
+                    <div class="skill-circle bash" data-percent="85">
+                        <svg viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                            <path class="circle" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                        </svg>
+                        <div class="skill-name">
+                            <!-- <i class="fas fa-terminal"></i> </br> -->
+                            #! </br>
+                            Bash
+                        </div>
+                    </div>
+
+                    <div class="skill-circle figma" data-percent="85">
+                        <svg viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                            <path class="circle" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                        </svg>
+                        <div class="skill-name">
+                            <i class="fa-brands fa-figma"></i> </br>
+                            Figma
+                        </div>
+                    </div>
+
+                    <div class="skill-circle ai" data-percent="85">
+                        <svg viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                            <path class="circle" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                        </svg>
+                        <div class="skill-name">
+                            <i class="fa-solid fa-robot"></i> </br>
+                            AI
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 full-height">
+            <div class="container mx-auto px-4 animate__animated">
+                <h2 class="text-4xl font-bold text-center mb-12 ">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                 <a target="_blank" href="https://github.com/shell-ninja/hyprconf">
+                <div class="bg-gray-800 p-6 rounded-lg project-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Projects/Hyprconf/1.png" alt="Hyprconf Project" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-bold">Hyprconf</h3>
+                    <p class="mt-2">Simple, yet gorgeous Hyprland Configuration with dynamic color.</p>
+                    <!-- <div class="project-overlay">
+                        <p class="text-md">Click to see the github repo.</p>
+                    </div> -->
+                </div>
+                </a>
+                <!-- Project 2 -->
+                 <a target="_blank" href="https://github.com/shell-ninja/i3-dotfiles">
+                    <div class="bg-gray-800 p-6 rounded-lg project-card" data-aos="fade-up" data-aos-delay="400">
+                        <img src="Projects/i3/1.png" alt="i3 Project" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h3 class="text-2xl font-bold">i3 WM</h3>
+                        <p class="mt-2">A clean and minimalistic i3 window manager dotfiles</p>
+                        <!-- <div class="project-overlay">
+                            <p class="text-md">Click to see the github repot.</p>
+                        </div> -->
+                    </div>
+                </a>
+                <!-- Project 3 -->
+                <a target="_blank" href="https://github.com/shell-ninja/Bash">
+                    <div class="bg-gray-800 p-6 rounded-lg project-card" data-aos="fade-up" data-aos-delay="600">
+                        <img src="Projects/Bash/1.png" alt="Bash Project" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h3 class="text-2xl font-bold">Bash</h3>
+                        <p class="mt-2">A feature-rich custom Bash configuration with useful functions.</p>
+                        <!-- <div class="project-overlay">
+                            <p class="text-md">Click to see the github repo.</p>
+                        </div> -->
+                    </div>
+                </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 full-height">
+            <div class="container mx-auto px-4 animate__animated">
+                <h2 class="text-4xl font-bold text-center mb-12 ">Contact Me</h2>
+                <div class="max-w-lg mx-auto text-left text-xl text-gray-300">
+                    <p>Contact me? </br> Bro, I'm in the middle of a rice emergency.</br> Neofetch doesn't match my wallpaper. 😞 </br> </br>
+                    In the meantime, feel free visit my:</br>
+                    <div class="text-center mt-6 md:text-left">
+                        <a target="_blank" href="https://github.com/shell-ninja">GitHub |</a>
+                        <a target="_blank" href="https://youtube.com/@shell-ninja">YouTube |</a>
+                        <a target="_blank" href="https://facebook.com/mahin.bhau">Facebook</a>
+                    </div>
+
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-center py-4">
+        <p class="text-gray-300 text-sm">&copy; 2025 Mahin. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

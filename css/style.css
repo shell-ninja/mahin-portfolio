@@ -1,0 +1,144 @@
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    /* background-color: #0f1020; */
+    background: #242f47;
+    background: linear-gradient(45deg, rgb(6, 11, 27) 20%, rgb(29, 5, 46) 100%);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.full-height {
+    min-height: calc(100vh - 4rem); /* 4rem is the height of the navbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-active {
+    color: #9c9c9c;
+}
+
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    border-radius: 15px;
+    background-color: #ffffff; /* Tailwind's teal-500 */
+    transition: width 0.2s ease-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-blur {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.027);
+}
+
+.navbar-hidden {
+    transform: translateY(-100%);
+}
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    height: 400px;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: visible;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(20px); /* Explicitly start with 0 blur */
+    -webkit-backdrop-filter: blur(20px);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateY(100%); /* Start off-screen at the bottom */
+    opacity: 0; /* Start invisible */
+    will-change: transform, opacity, backdrop-filter; /* Hint for browser optimization */
+    transition: transform 0.3s linear, opacity 0.1s linear, backdrop-filter 0.1s linear; /* Backdrop-filter transition slightly longer */
+}
+
+.project-card img {
+    transition: transform 0.3s ease;
+    height: fit-content;
+    border-radius: 5px;
+}
+
+.project-card:hover img {
+    transform: scale(1.08);
+    border-bottom: 2px solid #ffffff4a;
+    box-shadow: 20px 10px 15px #0000006e;
+}
+
+.glass-form {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.hamburger-line {
+    display: block;
+    width: 100%;
+    height: 3px; /* Thicker lines */
+    background-color: #cccccc; /* Lighter gray color */
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+}
+
+.top-line {
+    top: 0;
+}
+
+.middle-line {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bottom-line {
+    bottom: 0;
+}
+
+#mobile-menu-button.open .top-line {
+    transform: rotate(45deg) translateY(8px) translateX(8px);
+}
+
+#mobile-menu-button.open .middle-line {
+    opacity: 0;
+}
+
+#mobile-menu-button.open .bottom-line {
+    transform: rotate(-45deg) translateY(-8px) translateX(8px);
+}
