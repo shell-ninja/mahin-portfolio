@@ -3,17 +3,16 @@ document.querySelectorAll('.nav-link').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-
-        // Hide mobile menu and reset button after clicking a link
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         if (!mobileMenu.classList.contains('hidden')) {
             mobileMenu.classList.add('hidden');
             mobileMenuButton.classList.remove('open');
         }
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
 
